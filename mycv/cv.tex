@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.1.5, 1 December 2018) written by
+% LianTze Lim (liantze@gmail.com), based on the
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Carlito}
+\else
+  % If using pdflatex:
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{37474F}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Abdallah Meddah}
+\tagline{Seeking a 6 month internship starting from March 2020}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+\photo{2.5cm}{American-passport-photo}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+    \email{meddah.abdellah.spcx@gmail.com}
+    \phone{+33769238622}
+    \location{France, Paris}
+    \linkedin{linkedin.com/in/MeddahAbdallah}
+    \github{github.com/MeddahAbdellah}
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+
+\cvsection[page1sidebar]{Work Experience}
+
+\cvevent{Embedded IoT Devices Engineer (Freelance)}{Art-IA Engineering \hfill (Signed a Non Disclosure Agreement)}{Aug 2019 -- November 2019}{Estonia}
+\begin{itemize}
+    \item Conceived and Designed an ESP32 based Data Logger and actuator for a Light Therapy Machine.
+    \item Developed an Android/IOS application to tune and control the Machine over MQTT and read BLE beacon's data.
+    \item Implemented the MQTT protocol to handle the high data rates necessary to the closed loop control system.
+    \item Setup an AWS Server to host an MQTT broker using both MQTT and web-sockets and Web application as an admin-panel.
+\end{itemize}
+\cvtag{ESP32} 
+\cvtag{Multi-threading}
+\cvtag{C/C++}
+\cvtag{NodeJs}
+\cvtag{AWS}
+\cvtag{Phonegap}
+
+\vspace{10px}
+
+\cvevent{Erasmus+ Telecommunication Engineering Internship Grant }{SATIE Laboratory}{May 2019 -- Aug 2019}{France, Gif-Sur-Yvettes}
+\begin{itemize}
+    \item Conceived a Compact System With Telemetry To Record A Rocket Flight.
+    \item Created a multi-platform platform for the flight data visualization.
+\end{itemize}
+\cvtag{MbedOS 5} 
+\cvtag{ARM}
+\cvtag{C/C++}
+\cvtag{Data Aquisition}
+\cvtag{NodeJs}
+\cvtag{Altium}
+
+\vspace{10px}
+
+\cvevent{Embedded Systems Engineer (Freelance)}{AlucentX \hfill }{Nov 2018 -- May 2019}{USA, Miami}
+\begin{itemize}
+    \item Conceived ring controllers for VR gaming on Smart Glasses.
+    \item Led a software engineering team in the development of an optimized Linux distribution for VR gaming (based on Node-OS).
+\end{itemize}
+\cvtag{Digital Motion Processing} 
+\cvtag{Bluetooth Low Eenrgy}
+\cvtag{NodeOS}
+\cvtag{C++}
+
+\cvevent{Embedded Systems Engineer (Freelance) }{PAEPACK}{sep 2018 -- Nov 2018}{USA, Inglewood}
+\begin{itemize}
+    \item Conceived an ESP32-based PLC to control an industrial conveyor system.
+    \item Developed a web-application running on AWS for data visualization and Over The Air configuration of  conveyor systems for multiple users.
+\end{itemize}
+\cvtag{C/C++} 
+\cvtag{Eagle}
+\cvtag{CPanel}
+\cvtag{PHP7}
+\cvtag{Cordova}
+\cvtag{Power Electronics}
+
+\vspace{10px}
+
+%\cvevent{Aircraft Maintenance Engineering Internship }{Air %Algerie}{sep 2017 -- Jan 2018}{Algeria, Algiers}
+%\begin{itemize}
+ %   \item Establishment of a Peer-to-peer ATC communication %simulation.
+   % \item Troubleshooting and maintnance of a weather Radar .
+%\end{itemize}
+\cvsection{Education}
+
+\cvevent{Master 2 Networking and Telecommunications}{Paris-Saclay University}{Sept 2019 -- Ongoing}{France, Gif-Sur-Yvettes}
+\cvevent{Second Year in Electronics Engineering School (BAC+4)}{Ecole National Polytechnique Alger \hfill \faMortarBoard Score: 13.53/20}{Sept 2017 -- Aug 2019}{Algeria, Algiers}
+\cvevent{National Entrance Exam to the Grandes Ecoles d'Ingenieur }{Ecole National Polytechnique Alger \hfill \faMortarBoard Rank: 22/1500  }{Sept 2015 -- Aug 2017}{Algeria, Algiers}
+
+\clearpage
+
+\end{document}

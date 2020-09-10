@@ -1,0 +1,99 @@
+\documentclass[9pt]{article}
+\title{\textbf{Digital Bangladesh}}
+\author{Md.Hadiuzzaman}
+\begin{document}
+\begin{center}
+
+\huge{\textbf{Readability Analysis of Bengali Literary Texts}}\\
+\vspace{0.5cm}
+\vspace{2cm}
+\large{\textbf{Hadiuzzaman}}\\
+\vspace{8cm}
+A thesis presentation of Digital Bangladesh\\
+\vspace{1.5cm}
+Computer Science and Engineering\\
+Bangladesh Army university of Science and Technology
+\end{center}
+\vspace{5cm}
+\huge{\textbf{1.Introduction }}\\
+\\
+Although the deﬁnition of readability is quitevague, 
+itisgenerally unders to odto be the ease of reading and comprehending texts. The acceptability of a writer’s work depends upon how much the text is readable and understandable to the mass. This encouraged research in the ﬁelds of people’s reading skills and quantiﬁcation of readability. Although some researchers like Pikulski (2002) havequestionedsuchquantiﬁcationintheformofautomaticreadabilityscoring formulas(36),theydo ﬁndgooduseindiﬀerent ﬁelds,includingbutnotlimited togradationofschoolbooksatdiﬀerentgradelevels,andautomaticassessmentof text comprehension material. Readability tests are regularly used in diﬀerent application areas such as gradation of schoolbooks (Aukerman, 1965; Ayodele, 2013;Spache,1953),medicalprescriptions(Baker and Taub,1983;Paasche-Orlow, Taylor, and Brancati, 2003); ﬁnancial texts (Loughran and McDonald, 2010) and software readability (Buse and Weimer, 2008). Such applications of readability assessment are yet to be seen for relatively under-resourced languages such as Bengali. Readabilityofatextmostnaturallydevolvesonthemotivationandinterestof the reader. Physical characteristics of a text that aﬀect its readability are paper quality, font size, print quality, misspellings and vocabulary. Other than these, readability depends on reader characteristics such as ‘speed of perception’‘perceptibility at a distance’, ‘perceptibility in peripheral vision’, ‘visibility’, ‘the reﬂexblinktechnique’,‘rateofwork’(i.e.speedofreading),‘eyemovements’and ‘fatigue in reading’ (Tinker, 1963). Most of the classical readability indices (e.g. the ones proposed by Flesch, Dale and Chall, McLaughlin, and Fry, 1977) deal with lexical features (Dale and Chall, 1948; Flesch, 1948; Lorge,1944; McLaughlin, 1969), such as average sentence length, average word length, usage of diﬃcult words, polysyllabic words, etc. It was recently shown that language-speciﬁc features– such as parts-of-speech (POS)-based features, semantic features and discourse features – can signiﬁcantly aﬀect readability (Feng, Jansche, Huenerfauth, and Elhadad, 2002).\\
+So far, these studies have mostly been performed in English and other highresourced languages such as Chinese, German and French (François and Fairon, 2012; Hancke, Vajjala, and Meurers,2012; Henry,1975; Pang,2006; Schwartz, 1975;Walters,1966;Yang,1970).ReadabilityresearchinBengalistartedwiththe \\work of Das and Roychoudhury in 2000 (Das and Roychoudhury, 2000). Followup studies in 2003 and 2006 modelled Bengali readability as a parametric ﬁt to human-annotated ground truth data (Das and Roychoudhury, 2004, 2006). Although pioneering, Das and Roychoudhury’s work was stymied by the lack of a large enough dataset, and inadequate analysis of features used in their regression models. Later studies by Sinha, Sharma, Dasgupta, and Basu (2012), Islam, Mehler, Rahman, and Texttechnology (2012) and Islam, Rahman, and Mehler(2014)improvedthestateoftheartbyintroducingnovelfeatures, models and datasets. To date, however, Bengali readability research remains in its infancy, owing partly to the lack of large enough human-annotated ground truth data.\\
+In this article, we have done our study over a dataset of 30 text passages, excerpted from the literature of 4 eminent writers of Bengali language. These texts were rated for readability on a 7-point Likert Scale by seven independent human annotators. We conducted an inter-annotator agreement study on these ratings as shown in Section 4, and modelled Bengali readability on a set of 18 lexical, syntactic and semantic features. Regression analysis was applied over these features to generate our models. We measured the goodness-of-ﬁt for our models using adjusted R2 and mean squared error (MSE). In terms of MSE, our best model was found to outperform the models proposed by Sinha et al. (2012). The rest of this chapter is organized as follows. We discuss related research in Section 2, followed by a discussion of our problem, dataset and annotation scheme in Section 3. Feature description, feature selection and model construction are detailed in Section 5.2.1. Section 7 contains results and discussions and Section 8 concludes the chapter with contributions, limitations and future research directions
+
+
+\huge{\textbf{2 Related Work}}\\
+Many diﬀerent readability formulas have been proposed for English (Dale and Chall, 1948; Flesch, 1948; Kintsch and Van Dijk, 1978; Lorge, 1944; McLaughlin, 1969). Most of the classical formulas depend on surface-level features such as average sentence length (ASL), average word length (AWL), number of syllables and number of polysyllabic words. Senter and Smith (1967) argued that factors related to word diﬃculty and sentence diﬃculty were more important than surface features. Liu, Croft, Oh, and Hart (2004) treated readability estimation as a text categorization problem and used support vector machines (SVM) on syntactic and semantic features. Feng et al. (2010) did a comprehensive feature analysis for readability modelling. They considered several ﬁne-grained feature categories like shallow features, discourse features, POS-based features, language modelling features, lexical chain features, etc. They observed that POS features (nouns in particular) and shallow features (average sentence length) had the best predictive performance.\\
+ical readability formulas (Pikulski., 2002). Pikulski aﬃrms what the International Reading Association points out as the two major clusters of factors that are not assessed by readability formulas. First is the conceptual readability, consisting of factors such as ‘density of concepts, abstractness of ideas, text organization and coherence and sequence of ideas’, and second is the format or design cluster consisting of ‘page format, length of type line, length of paragraphs, and the use of illustrations and color’ (Gray and Leary, 1935). Durr, Hillerich, and Miﬄin (1986) tried to overcome this problem and incorporated the interaction between readers (students) and readability formulas while implementing the latter in their reading programme. While most readability studies have been performed in English, a few other high-resourced languages also enjoyed a good amount of readability research. In German, Hancke et al. (2012) introduced derivational and inﬂectional morphology of nouns as features for readability classiﬁcation. Schwartz (1975) developed the ‘German Readability Graph’ in line with the ‘Fry Readability Graph’ (Fry, 1977). Number of syllables and number of sentences in 100-word samples were plotted on the graph. Glöckner, Hartrumpf, Helbig, Leveling, and Osswald (2006) overcame the limitations of traditional readability formulas for German by employing powerful NLP techniques to extract causal factors of readability instead of approximating them by surface features such as sentence length. Glöckner et al.’s system further rewrites the text for better readability. In French, Henry (1975) gave an outline of readability measures. François and Fairon (2012) proposed a new ‘French as a foreign language’ readability formula. They took into account 46 textual features representing the lexical, syntactic and semanti levels, as well as some of the context sensitivity. Franc¸ois and Fairon showed that maximizing the type of linguistic information does not always yield the best results, and avoiding semantic features did not aﬀect the performance of their best models.\\
+Chinese has seen a good amount of readability research (Chen, Chen, and Cheng, 2013; Jeng, 2001; Lee et al., 2012; Pang, 2006; Yang, 1970). Yang’s (1970) study was a pioneering e ﬀort in Chinese readability assessment. He collected 85 Chinese passages from diﬀerent genres of writing and found that the number of strokes in a character, the presence of words in a basic word list, and the proportion of full sentences in a passage had the most predictive power for text reading diﬃculty. Yang derived two readability formulas with 31 and 7 predictors respectively. More recently, Jeng (2001) compared linear and nonlinear approaches to measure readability of children’s literature. His corpus had 223articleswithatotalofmorethan82,000wordsselectedfromchildren’ sbooks fornativeChinesespeakersingrades1to6(Yang,1970).Applicationofartiﬁcial neural networks and linear regression on this corpus showed their comparable eﬀectivenessinreadabilityestimation.Pang(2006)modelledChinesereadability as a support vector regression problem. He compared his approach with linear regression,andfoundthatsupportvectorregressionoutperformedlinearregression under a cross-validation setting. Pang further showed the utility of his approach in modelling readability of Chinese web pages. Lee et al. (2012) combined principal component analysis (PCA) with genetic programming (GP) for modelling Chinese readability, and Chen et al. (2013) applied t ﬁdf and lexical chains as features for readability classiﬁcation using SVM. For the under-resourced Indian languages, especially Bengali, very few such working readabilityindicesexist.DasandRoychoudhury(2000)havestudiedtheapplication of readability indices on Bengali texts. They considered the density of polysyllabic words, average sentence length (ASL), number of syllables per 100 words, and a few other surface features in their studies (Das and Roychoudhury, 2004, 2006). Their sample size was very small (seven passages) and the dataset was created only from literary novels\\
+More recently, Sinha et al. (2012) presented readability models for Hindi and Bengali. Their dataset consisted of 16 human-annotated passages. They incorporated structural features such as average sentence length (ASL), average word length (AWL), average number of syllables per word (ASW), number of polysyllabic words (PSW), number of polysyllabic words per 30 sentences (PSW30), and number of juktakkhors (JUK). They identiﬁed AWL, PSW, JUK and PSW30 as the four most important features that aﬀect readability in Hindi and Bengali. They further used machine learning approach (Sinha andIslam et al. (2012) proposed three broad categories of features; lexical features, entropy-based features and Kullback-Leibler [KL] Divergencebased features. Combining all three categories gave the best results (in terms of Fscore) in Bengali readability classiﬁcation on a corpus of school textbooks. Islam and others extended their work in Islam et al. (2014) where 18 carefully curated features were used to achieve state-of-the-art results (86.46% F-score). Seven out of these 18 were information-theoretic features. Islam et al, (2012). found that lexical and information-theoretic features are not only easy to compute, but they also perform very well. They suggested that these features are especially good for under-resourced languages, because they drastically reduce the need for preprocessing. Islam et al, (2012 and 2014) and Sinha et al. (2012) independently showed that classical readability measures for English, such as the Gunning Fog index (Gunning, 1952), the Dale-Chall readability formula (Chall & Dale, 1995; Dale & Chall, 1948), the Automated Readability Index (Senter & Smith, 1967), the Flesch-Kincaid readability score (Flesch, 1948) and Simple Measure of Gobbledygook (SMOGreadability index) (McLaughlin, 1969), were not good enough for Bengali. Islam et al. (2014) further proposed Bengali readability classiﬁers based on lexical, entropy-related and information-transmission-related features which gave better results than surfacefeature-based classiﬁers. Basu, 2016) for readability assessment, and showed that though support vector regression gives fairly good R2 values, they also show very high error values.
+\\
+While all the above studies are very important, we feel that more research needs to be done in Bengali readability analysis. We have chosen regression modelling to construct our readability scores, which is a more ﬁne-grained modelling technique than Islam et al.’s(2012, 2014) multi-class classiﬁcation. Regressioncanaﬀordacontinuousresponsevariablewhereasmulti-classclassiﬁcation can only aﬀord k discrete labels. In readability modelling, therefore, we feelthattheregressionsettingisamoreappropriatechoicethantheclassiﬁcation setting. Whereas the former yields a continuous scale of values on which a document can be placed, discrete binning of the latter seems to us to be less satisfactory. Furthermore, we had seven labels for annotation (cf. Section 3.1), which is greater than the four labels used by Sinha et al. (2012). A continuous responsevariablewascreatedbytakingthemeanofthesesevendiscreteratings. While all the above studies are very important and insightful, none of them explicitly performed an inter-rater agreement study. An inter-rater agreement studyisveryimportantwhenwetalkaboutreadabilityassessment.Further,none ofthesestudiesmadeavailabletheirreadability-annotatedgoldstandarddatasets, therebystymieingfurtherresearch.Weattempttobridgethesegapsinourwork\\
+\\
+\huge{\textbf{3.Problem Description}}\\
+Bengali is an Indic language spoken by native speakers in Bangladesh and the eastern part of India comprising West Bengal, Tripura and Assam. It is 
+written in the Bengali script. With about 220 million native and about 30 million non-native speakers, Bengali is one of the most widely spoken languages, ranked seventh in language usage among all languages in the world (‘Language Diﬃculty Ranking’ [n.d.]). Three countries – India, Bangladesh and Sri Lanka – have their national anthems written in Bengali. Bengali has been classiﬁed as a Category IV language in terms of learning diﬃculty for somebody whose ﬁrst language is English (Summary by Language Size [n.d.]). It shows diglossia, with one form reserved for formal settings and literature, and the other for everyday usage. Furthermore, spoken Bengali has several dialects. The principal dialect uses two forms, a written form, sadhu bhasha (formal) and a spoken form, chalit bhasha (colloquial).\\
+Bengali is a highly inﬂected language, and has special features such as ‘juktakkhor’ (compound characters), ‘sandhi’ (phonetic ligature), and ‘samas’ (word compounding), thereby making it relatively diﬃcult for non-natives to read and understand Bengali text. In this work we propose a model for measuring readability for the Bengali language incorporating language-speciﬁc features such as morphological variants of words, semantic variations, presence of stop words, word senses, etc.\\
+\\
+
+\huge{\textbf{3.1. Dataset}}\\
+Bengali being an under-resourced language, there is a noticeable dearth of standardized corpora and language processing tools. We collected 30 passages with the help of the Society for Natural Language Technology Research (SNLTR). We considered the works of four famous Bengali authors: Bankim Chandra Chattopadhyay (1838–1894), Bibhutibhushan Bandyopadhyay (1894–1950), Rabindranath Tagore (1861–1941) and Sarat Chandra Chattopadhyay (1876–1938). The works of Bibhutibhusan Bandyopadhyay are yet to come online, so we manually typed in the text. These four authors have distinct styles of writing, in diﬀerent genres. Table 1 gives overall statistics of our dataset, categorized by children’s literature and adult literature,1 and also by the two diglossic variants of Bengali language.\\
+Wesampled30randompassagesfromtheworksofthe4litterateurs.Passages werecarefullyselectedtoensurethattheycoverallgenres–fromchildren’stexts toadultliterature,fromnovelstoshortstoriestoarticles.Sampledpassageswere given to seven annotators (three males, four females) for readability judgment. Annotators were all native Bengali speakers of the same academic background andsameagegroup(between30and35years)andallofthemwereavidreaders ofBengaliliterature.Annotatorswererequiredtoratethepassagesonthebasisof the ease of reading the text and comprehending it, on a 7-point Likert Scale (Likert, 1932). The rating scale was:\cite{jaman}
+\\
+
+
+Table 1.Children's-adult literature and sadhu bhasa chalid bhasha text count\\
+\begin{tabular}{c c c c c c c}
+\hline
+Author&\hspace{.2cm}kids &adult&\hspace{.2cm}total &\hspace{.2cm}Sadhu Basha&Chalit Basha &total\\
+\hline
+Rabindra Nath Tagore&4&12&4&4&12\\
+Bankim Chandra Chattopadhyay&0&6&6&6&3&9\\
+Bibhuti Bhusan Bandopadhyay&1&2&3&6&0&6\\
+\hline
+
+
+\end{tabular}
+\\
+\\
+\\
+$\bullet$ 1 - Very easy to read\\
+$\bullet$ 2 – Easy to read \\
+$\bullet$ 3 – Somewhat easy to read\\
+$\bullet$ 4 – In-between\\
+$\bullet$ 5 – Somewhat diﬃcult to read\\
+
+\hspace{2cm}
+This rating scale reﬂects the fact that readability is not a binary/ternary variable; it is an ordinal variable. We further collected the data on whether the annotators were avid readers of Bengali or not. Each annotator rated every passage. It is worth mentioning that readability annotation in Bengali is challenging because passages written in sadhu bhasha tend to be harder to read than those written in cholit bhasha. Since our dataset contains both sadhu bhasha and cholit bhasha, maintaining consistency in readability rating becomes a big issue.\\
+\\
+\hspace{2cm}
+\huge{\textbf{4. Inter-Annotator Agreement}}\\
+\\
+Beforeproceedingtomodelgenerationastudyofinter-annotator agreementbetweentheraterswasdone.Onthebasisofratingsgivenbytheseven annotators, we studied whether they agreed among each other. We used Spearman’s rank correlation\cite{B} coeﬃcient  as shown in Equation  and Cohen’s kappa  as shown in Equation . Results indicate that there is\cite{B} moderate to fair agreement among the seven annotators (Phani, Lahiri, and Biswas, which in turn indicates that \cite{C}. human annotators agreed pretty well with respect to Bengali readability scoring. Mean ratings were then used for readability modelling \cite{D}.
+\\
+\\
+
+$(R)=1-(6*\sum{d^2})/(n^3-n)$
+\\
+where,\\
+R is the Spearman’s Rank correlation coeﬃcient, \\
+d is the diﬀerence in ranks, and \\
+n is the number of annotators.\\
+
+\begin{thebibliography}
+	
+\bibitem{A}
+1.hadiuzzaman  ljhj  khhkj      khkj.
+\bibitem{B}
+  2.      bangladesh.
+        
+        \bibitem{C}
+    3.    Baust
+        \bibitem{D}
+      4.  Buet
+\end{thebibliography}
+
+
+
+\end{document}
